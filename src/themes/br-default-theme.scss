@@ -1,30 +1,63 @@
 @import 'variables';
 
+$star-utf8: '\2605';
+
 .br-default {
+  .br-default {
 
-  .br-units {
-    align-items: center;
-  }
+    .br-units {
+      .br-units {
+        align-items: center;
+        align-items: center;
+      }
+    }
 
-  .br-unit {
-    margin-right: 5px;
-    font-size: 23px;
-    height: 18px;
-    width: 18px;
+    .br-unit {
+      .br-unit {
+        position: relative;
+        margin-right: 5px;
+        margin-right: 5px;
+        font-size: 23px;
+        font-size: 23px;
+        height: 18px;
+        line-height: 1;
+        width: 18px;
 
-    &:after {
-      content: "\2605";
-      color: $star-default;
+        &:after {
+          &::before {
+            content: "\2605";
+            content: $star-utf8;
+            color: $star-default;
+            color: $star-default;
+          }
+        }
+      }
+    }
+
+    .br-selected:after {
+
+      .br-selected::before,
+      .br-fraction::after {
+        color: $star-selected;
+        color: $star-selected;
+      }
+    }
+
+    .br-fraction::after {
+      content: $star-utf8;
+      width: 50%;
+      width: calc(50% + 1px); // adds one so the half star can be easily seen
+      position: absolute;
+      top: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    .br-active:after {
+      .br-active::before {
+        color: $star-active;
+        color: $star-active;
+      }
     }
   }
-
-  .br-selected:after {
-    color: $star-selected;
-  }
-
-  .br-active:after {
-    color: $star-active;
-  }
-
 }
-
